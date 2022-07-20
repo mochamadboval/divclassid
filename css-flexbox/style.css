@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --color-black: #111111;
+  --color-dark-green: #0b6758;
+  --color-light-green: #0d7968;
+  --color-white: #fcfcfc;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: var(--color-black);
+  font-family: sans-serif;
+  height: 100%;
+  line-height: 1.5;
+}
+
+.container {
+  padding: 10px;
+}
+
+.container:nth-child(odd) {
+  background-color: var(--color-dark-green);
+}
+
+.container:nth-child(even) {
+  background-color: var(--color-light-green);
+}
+
+.card {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  color: var(--color-black);
+  margin: 10px;
+  padding: 20px;
+  width: calc(25% - 20px);
+}
+
+/* 1. Property display: flex */
+.display {
+  display: flex;
+}
+
+/* 2. Property flex-direction */
+.flex-direction {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3. Property flex-wrap */
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+/* 4. Property flex-flow */
+.flex-flow {
+  display: flex;
+  flex-flow: column wrap;
+
+  /* Tambahan agar efeknya terlihat */
+  height: 300px;
+}
+
+/* 5. Property justify-content */
+.justify-content {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* 6. Property align-items */
+.align-items {
+  align-items: center;
+  display: flex;
+}
+
+/* 7. Property align-content */
+.align-content {
+  align-content: center;
+  display: flex;
+
+   /* Tambahan agar efeknya terlihat */
+  flex-wrap: wrap;
+  height: 400px;
+}
+
+/* 8. Property gap */
+.gap {
+  display: flex;
+  gap: 20px;
+}
+
+.gap > .card {
+  /* Tambahan agar efeknya terlihat */
+  margin: 0;
+}
+
+/* 9. Property order */
+.order {
+  display: flex;
+}
+
+.order > .card:nth-child(1) {
+  order: 1;
+}
+
+/* 10. Property flex-grow */
+.align-self {
+  display: flex;
+}
+
+.align-self > .card:nth-child(2) {
+  align-self: center;
+}
+
+/* 11. Property flex-grow */
+.flex-grow {
+  display: flex;
+}
+
+.flex-grow > .card:nth-child(2) {
+  flex-grow: 1;
+}
+
+/* 12. Property flex-shrink */
+.flex-shrink {
+  display: flex;
+}
+
+.flex-shrink > .card {
+  flex-shrink: 0;
+}
+
+/* 13. Property flex-basis */
+.flex-basis {
+  display: flex;
+}
+
+.flex-basis > .card:nth-child(2) {
+  /* Kode berikut akan mengatur lebar card
+  sebesar 50%, kemudian dikurangi 20px
+  untuk margin-nya */
+  flex-basis: calc(50% - 20px);
+}
+
+/* 14. Property flex */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex > .card:nth-child(1),
+.flex > .card:nth-child(2) {
+  flex: 0 0 calc(50% - 20px);
+}
+
+.flex > .card:nth-child(3) {
+  flex: 0 0 calc(100% - 20px);
+}
+
+.flex > .card:nth-child(5) {
+  flex: 0 0 calc(75% - 20px);
+}
+
+.flex > .card:nth-child(6) {
+  flex: 0 0 1700px;
+}
